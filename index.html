@@ -240,11 +240,11 @@ footer button{margin:10px 8px 0 0}
 
   <div class="band">
     <h2>Baseline test</h2>
-    <p style="font-size:14px;color:var(--muted);margin-bottom:14px"><b>Do the push-up one now</b> — nothing else works until it's in, and half that number becomes your daily set size. The other three set the Nov 11 date, so do them fresh before a session. Strict form, one set, go until the next rep won't happen. You can fill these in separately; retesting later updates the number without restarting your weekly climb.</p>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:14px"><b>Do the push-up one now</b> — nothing else works until it's in, and half that number becomes your daily set size. The other three set the Nov 11 date, so do them fresh before a session. <b>The handstand one is FREESTANDING</b> — off the wall, best of 3. A wall hold measures nothing, the wall is doing the balancing. Strict form, one set, go until the next rep won't happen. You can fill these in separately; retesting later updates the number without restarting your weekly climb.</p>
     <div class="setrow">
       <div class="slot"><label>Pull-ups</label><input type="number" id="tPull" min="0" inputmode="numeric"></div>
       <div class="slot"><label>Ring dips</label><input type="number" id="tDip" min="0" inputmode="numeric"></div>
-      <div class="slot"><label>Handstand s</label><input type="number" id="tHs" min="0" inputmode="numeric"></div>
+      <div class="slot"><label>Free hold s</label><input type="number" id="tHs" min="0" inputmode="numeric"></div>
       <div class="slot"><label>Push-ups</label><input type="number" id="tPush" min="0" inputmode="numeric"></div>
     </div>
     <button class="act" id="tSave">Save the baseline</button>
@@ -282,7 +282,7 @@ var RUNGS = ["Pike push-ups","Hands up on plates","Feet up on a box","Both at on
 var DAYS = [
 {name:"Monday", title:"Push + Sprints", blocks:[
   {vest:"off", clock:"0 → 12", label:"Easy pace. Long rests.", ex:[
-    {id:"m1", n:"Handstand hold", s:"Feet on the wall", type:"h", sets:4, t:30, step:5},
+    {id:"m1", n:"Wall handstand hold", s:"CHEST to the wall — face it and walk your feet up, belly toward the wall. Not back-to-wall, that one lets you arch and teaches a banana shape. This builds the straight line the freestanding hold needs. Not the test — the test is the freestanding one on Friday.", type:"h", sets:4, t:30, step:5},
     {id:"m2", n:"Pike push-ups",  s:"Feet walked in close", type:"lad", sets:3, t:5}
   ]},
   {vest:"on", clock:"12 → 30", label:"Rest 75 seconds", ex:[
