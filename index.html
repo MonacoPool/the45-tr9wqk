@@ -239,8 +239,8 @@ footer button{margin:10px 8px 0 0}
   </div>
 
   <div class="band">
-    <h2>Baseline test · first Monday, before you start</h2>
-    <p style="font-size:14px;color:var(--muted);margin-bottom:14px">Half the push-up number becomes your daily set size. 8+ pull-ups and Nov 11 is real.</p>
+    <h2>Baseline test</h2>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:14px"><b>Do the push-up one now</b> — nothing else works until it's in, and half that number becomes your daily set size. The other three set the Nov 11 date, so do them fresh before a session. Strict form, one set, go until the next rep won't happen. You can fill these in separately; retesting later updates the number without restarting your weekly climb.</p>
     <div class="setrow">
       <div class="slot"><label>Pull-ups</label><input type="number" id="tPull" min="0" inputmode="numeric"></div>
       <div class="slot"><label>Ring dips</label><input type="number" id="tDip" min="0" inputmode="numeric"></div>
@@ -718,7 +718,11 @@ document.getElementById("sallyGo").addEventListener("click", function(){
 document.getElementById("tSave").addEventListener("click", function(){
   var g=function(i){ var v=document.getElementById(i).value; return v===""?null:Number(v); };
   DB.test={pull:g("tPull"), dip:g("tDip"), hs:g("tHs"), push:g("tPush")};
-  if(DB.test.push!=null){ DB.pu.max=DB.test.push; DB.start=today(); }
+  if(DB.test.push!=null){
+    DB.pu.max=DB.test.push;
+    // the +1-per-week clock starts ONCE — retesting updates the max, never restarts the climb
+    if(!DB.pu.started){ DB.start=today(); DB.pu.started=true; }
+  }
   if(DB.test.dip!=null) st("m3").t = Math.max(5, Math.min(DB.test.dip, 8));
   save(); paintPu(); paintAllRows();
   var out=document.getElementById("tOut"), lines=[];
