@@ -143,6 +143,8 @@ button.act:focus-visible,button.ghost:focus-visible{outline:2px solid var(--ink)
 .pubig{display:flex;align-items:baseline;gap:10px;margin:0 0 14px}
 .punum{font-family:ui-monospace,Consolas,monospace;font-size:52px;font-weight:800;line-height:1;color:var(--accent)}
 .pulbl{font-size:14px;color:var(--muted)}
+.pucol{display:flex;flex-direction:column;gap:5px}
+.pucol input[type=number]{width:100%}
 .dots{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
 .dot3{font:inherit;cursor:pointer;padding:15px 6px;background:var(--surface);border:1px solid var(--rule);
   border-radius:2px;color:var(--muted);font-size:13px;font-weight:700;letter-spacing:.05em}
@@ -197,13 +199,15 @@ footer button{margin:10px 8px 0 0}
 
   <div class="band hot">
     <h2>One set before each meal</h2>
-    <div class="pubig"><span class="punum" id="puSize">–</span><span class="pulbl">reps per set<br>3 sets a day</span></div>
+    <div class="pubig"><span class="punum" id="puSize">–</span><span class="pulbl">reps per set<br>the SAME number all three meals</span></div>
     <div class="dots">
-      <button class="dot3" id="pu0" aria-pressed="false">BREAKFAST</button>
-      <button class="dot3" id="pu1" aria-pressed="false">LUNCH</button>
-      <button class="dot3" id="pu2" aria-pressed="false">DINNER</button>
+      <div class="pucol"><input type="number" id="pur0" min="0" inputmode="numeric"><button class="dot3" id="pu0" aria-pressed="false">BREAKFAST</button></div>
+      <div class="pucol"><input type="number" id="pur1" min="0" inputmode="numeric"><button class="dot3" id="pu1" aria-pressed="false">LUNCH</button></div>
+      <div class="pucol"><input type="number" id="pur2" min="0" inputmode="numeric"><button class="dot3" id="pu2" aria-pressed="false">DINNER</button></div>
     </div>
-    <p style="margin-top:14px"><b>The meal is your reminder.</b> Hungry means it's time. <b>Never to failure</b> — they only work because they stay easy. Goes up 1 rep every week on its own.</p>
+    <p style="margin-top:14px">Number's already filled in. Do the set, tap the meal. Tap again to undo. Did a different number? Type it first.</p>
+    <p><b>It does NOT climb meal to meal.</b> Same number all three, every day — it goes up <b>1 rep per week</b>, on its own. Three easy sets is the whole point; ramping within the day turns the last one into a hard set, and a hard set costs you Monday's ring dips.</p>
+    <p><b>The meal is your reminder.</b> Hungry means it's time. <b>Never to failure.</b></p>
     <p id="puWeek" style="font-size:13.5px;color:var(--muted)"></p>
   </div>
 
@@ -290,7 +294,7 @@ var DAYS = [
   {vest:"off2", clock:"30 → 45", label:"Sprints", ex:[
     {id:"m7", n:"Sprints 8 × 25s", s:"Walk all the way back. Getting slower? Stop.", type:"n"}
   ]}
-]},
+], closer:"The sprints WERE the run today. Do not add the daily run on top — that is how hamstrings tear."},
 {name:"Tuesday", title:"Pull + Carries", blocks:[
   {vest:"none", clock:"0 → 17", label:"Your own warm-up first. Rest 90s.", ex:[
     {id:"t5", n:"False grip hang", s:"Wrists ON TOP of the rings. No wrist over the ring means no muscle-up. Ever.", type:"h", sets:3, t:30, step:5},
@@ -303,10 +307,9 @@ var DAYS = [
     {id:"t3", n:"Band pull-aparts", s:"Same job. Keeps the shoulders healthy under all the pressing.", type:"r", sets:3, t:25}
   ]},
   {vest:"", clock:"33 → 45", label:"Finish", ex:[
-    {id:"t9",  n:"Dead bug",       type:"r", sets:2, t:12},
-    {id:"t10", n:"Easy run 10 min", type:"n"}
+    {id:"t9",  n:"Dead bug",       type:"r", sets:2, t:12}
   ]}
-]},
+], closer:"Then the run — DAILY tab. That timer is the only run in the week besides Monday's sprints."},
 {name:"Wednesday", title:"Legs + Jumps", blocks:[
   {vest:"off", clock:"0 → 12", label:"Rest 3 min. Do not rush these.", ex:[
     {id:"w1", n:"Box or broad jumps", s:"5 × 3. Step down off the box, never jump down. Land quiet. Stop when they stop feeling springy.", type:"n"}
@@ -322,23 +325,21 @@ var DAYS = [
     {id:"w7", n:"Back extensions", type:"r", sets:3, t:12},
     {id:"w8", n:"Ab wheel",        type:"r", sets:3, t:8}
   ]}
-]},
+], closer:"Then the run — DAILY tab."},
 {name:"Thursday", title:"Muscle-up Day", blocks:[
   {vest:"off", clock:"0 → 15", label:"Fresh. Never a vest on skill work.", ex:[
     {id:"h1", n:"High pulls 5 × 3", s:"Pull as high as you physically can. Aim the rings at your lower chest.", type:"n"},
     {id:"h2", n:"Negatives 4 × 2",  s:"Start on top. 5 seconds down. WRITE DOWN how much help you used — ring height, or how far forward your feet are. Take a little off every week. That number IS the workout.", type:"n"},
     {id:"h3", n:"Front lever tuck", s:"Do these during the rests", type:"h", sets:4, t:12, step:2}
   ]},
-  {vest:"on", clock:"15 → 33", label:"Rest 75 seconds", ex:[
+  {vest:"on", clock:"15 → 45", label:"Rest 75 seconds", ex:[
     {id:"h4", n:"Weighted pull-ups", s:"Write the weight down. Every single time.", type:"w", sets:3, t:5, step:5},
     {id:"h5", n:"Face pulls",  type:"w", sets:3, t:15, step:2.5},
     {id:"h6", n:"Ring rows",   type:"r", sets:3, t:10},
-    {id:"h7", n:"Curls",       type:"w", sets:3, t:12, step:2.5}
-  ]},
-  {vest:"", clock:"33 → 45", label:"Run", ex:[
-    {id:"h8", n:"Easy run 12 min", type:"n"}
+    {id:"h7", n:"Curls",       type:"w", sets:3, t:12, step:2.5},
+    {id:"h9", n:"Hanging knee raises", type:"r", sets:3, t:12}
   ]}
-]},
+], closer:"Then the run — DAILY tab."},
 {name:"Friday", title:"Skill + Pump", blocks:[
   {vest:"off", clock:"0 → 12", label:"No rush", ex:[
     {id:"f1", n:"Handstand practice", s:"10 min of kick-ups. Log your best hold. Going for 30s.", type:"h", sets:1, t:10, step:2},
@@ -354,7 +355,7 @@ var DAYS = [
   {vest:"", clock:"40 → 45", label:"Finish", ex:[
     {id:"f8", n:"Hollow hold", type:"h", sets:3, t:30, step:5}
   ]}
-]}
+], closer:"Then the run — DAILY tab."}
 ];
 
 var EX = {};
@@ -474,6 +475,7 @@ function buildDays(){
       html += '</div>';
       if(b.ex.some(function(e){return e.type==="lad";})) html += ladderHTML();
     });
+    if(d.closer) html += '<div class="band hot"><h2>Before you stop</h2><p>'+d.closer+'</p></div>';
     html += '<div class="band"><h2>Note for the whole session</h2>'+
       '<textarea id="dn-'+di+'" placeholder="How the whole thing went — energy, sleep, time, anything you want to read back next week."></textarea>'+
       '<div class="btnrow"><button class="act" data-dn="'+di+'">Save session note</button></div>'+
@@ -632,7 +634,11 @@ function paintPu(){
   document.getElementById("puSize").textContent = size==null ? "–" : size;
   var d=DB.pu.days[today()]||[0,0,0];
   for(var i=0;i<3;i++){
-    document.getElementById("pu"+i).setAttribute("aria-pressed", d[i]?"true":"false");
+    var done = d[i]>0;
+    document.getElementById("pu"+i).setAttribute("aria-pressed", done?"true":"false");
+    var inp=document.getElementById("pur"+i);
+    inp.value = done ? d[i] : (size==null ? "" : size);
+    inp.placeholder = size==null ? "?" : size;
   }
   document.getElementById("puWeek").textContent = size==null
     ? "Do the baseline test below and this fills itself in."
@@ -641,10 +647,15 @@ function paintPu(){
 [0,1,2].forEach(function(i){
   document.getElementById("pu"+i).addEventListener("click", function(){
     var d = DB.pu.days[today()] || [0,0,0];
-    d[i] = d[i] ? 0 : 1;
+    if(d[i] > 0){ d[i] = 0; }                       // tap again to undo
+    else {
+      var v = Number(document.getElementById("pur"+i).value || 0);
+      if(!v){ toast("Put a number in the box first."); return; }
+      d[i] = v;
+    }
     DB.pu.days[today()] = d;
     save(); paintPu();
-    if(d[0]&&d[1]&&d[2]) toast("All three sets today. That's how the number climbs.");
+    if(d[0]&&d[1]&&d[2]) toast("All three today: "+d[0]+" / "+d[1]+" / "+d[2]+". Same number again tomorrow.");
   });
 });
 
