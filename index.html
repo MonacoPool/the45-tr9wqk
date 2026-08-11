@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#EFF0EC">
+<title>The 45</title>
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiVGhlIDQ1Iiwic2hvcnRfbmFtZSI6IlRoZSA0NSIsInN0YXJ0X3VybCI6Ii4vIiwic2NvcGUiOiIuLyIsImRpc3BsYXkiOiJzdGFuZGFsb25lIiwib3JpZW50YXRpb24iOiJwb3J0cmFpdCIsImJhY2tncm91bmRfY29sb3IiOiIjRUZGMEVDIiwidGhlbWVfY29sb3IiOiIjQzE0NDFCIiwiaWNvbnMiOlt7InNyYyI6ImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBTFFBQUFDMENBSUFBQUN5cjVGbEFBQUJ3MGxFUVZSNDJ1M2J3UTJBTUF3RXdmUkJPelJPWmFFQmhQZzQrS0tKdGdDd2hwZkp1TTVEZW13WWdlQVFISUpEY0FnT3dTRTRCSWZnRUJ3U0hJSkRjQWdPd1NFNEJJZmdFQnlDUTRKRGNBZ093U0U0QklmZ0VCeUNRM0JJY0FnT3dTRTRCSWZnRUJ5Q1EzQUlEc0Vod1NFNEJJZmdFQnlDNDdYNSthUThaOHFCQXc0NDRJQUREampnZ0FNT09PQ0FBdzQ0NElBRERqamdnQU1PT09DQUF3NDRrbkdzZVJtSUkxZjJjTUFCQnh4d3dBRUhISERBQVFjY2NNQUJCeHh3d0FFSEhIREFBUWNjY01BQng5SUJXZG4zK1lUZ2dBTU9PT0NBQXc0NDRJQUREampnZ0FNT09PQ0FBdzQ0NElBRERqamdnQU9PR2h4enU1TzdOUC8zMXdJNDRJQUREampnZ0FNT09PQ0FBdzQ0NElBRERqamdnQU1PT09DQUF3NDQ0SUNqQm9jTHluREFBUWNjY01BaE9PQ0FBdzQ0NElBRERqamdnQU1PT09DQUF3NDQ0SUFERHNIaEluWDlsT0NBQXc0NDRJQUREampnZ0FNT09PQ0FBdzQ0NElBRERqamdnQU1PT09DQUE0NGRjYWhQY0FnT3dTRTRCSWZnRUJ5Q1EzQUlEc0Vod1NFNEJJZmdFQnlDUTNBSURzRWhPQ1E0QklmZ0VCeUNRM0FJRHNFaE9BU0hCSWZnRUJ5Q1EzQUlEc0VoT0FTSDRCQWNFaHlDUTNBSURzR2hadDJHcDE1YjEybTVVZ0FBQUFCSlJVNUVya0pnZ2c9PSIsInNpemVzIjoiMTgweDE4MCIsInR5cGUiOiJpbWFnZS9wbmciLCJwdXJwb3NlIjoiYW55In1dfQ==">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAABw0lEQVR42u3bwQ2AMAwEwfRBOzROZaEBhPg4+KKJtgCwhpfJuM5DemwYgeAQHIJDcAgOwSE4BIfgEBwSHIJDcAgOwSE4BIfgEByCQ4JDcAgOwSE4BIfgEByCQ3BIcAgOwSE4BIfgEByCQ3AIDsEhwSE4BIfgEByC47X5+aQ8Z8qBAw444IADDjjggAMOOOCAAw444IADDjjggAMOOOCAAw44knGseRmII1f2cMABBxxwwAEHHHDAAQcccMABBxxwwAEHHHDAAQcccMABx9IBWdn3+YTggAMOOOCAAw444IADDjjggAMOOOCAAw444IADDjjggAOOGhxzu5O7NP/31wI44IADDjjggAMOOOCAAw444IADDjjggAMOOOCAAw444ICjBocLynDAAQcccMAhOOCAAw444IADDjjggAMOOOCAAw444IADDsHhInX9lOCAAw444IADDjjggAMOOOCAAw444IADDjjggAMOOOCAA44dcahPcAgOwSE4BIfgEByCQ3AIDsEhwSE4BIfgEByCQ3AIDsEhOCQ4BIfgEByCQ3AIDsEhOASHBIfgEByCQ3AIDsEhOASH4BAcEhyCQ3AIDsGhZt2Gp15b12m5UgAAAABJRU5ErkJggg==">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAABw0lEQVR42u3bwQ2AMAwEwfRBOzROZaEBhPg4+KKJtgCwhpfJuM5DemwYgeAQHIJDcAgOwSE4BIfgEBwSHIJDcAgOwSE4BIfgEByCQ4JDcAgOwSE4BIfgEByCQ3BIcAgOwSE4BIfgEByCQ3AIDsEhwSE4BIfgEByC47X5+aQ8Z8qBAw444IADDjjggAMOOOCAAw444IADDjjggAMOOOCAAw44knGseRmII1f2cMABBxxwwAEHHHDAAQcccMABBxxwwAEHHHDAAQcccMABx9IBWdn3+YTggAMOOOCAAw444IADDjjggAMOOOCAAw444IADDjjggAOOGhxzu5O7NP/31wI44IADDjjggAMOOOCAAw444IADDjjggAMOOOCAAw444ICjBocLynDAAQcccMAhOOCAAw444IADDjjggAMOOOCAAw444IADDsHhInX9lOCAAw444IADDjjggAMOOOCAAw444IADDjjggAMOOOCAA44dcahPcAgOwSE4BIfgEByCQ3AIDsEhwSE4BIfgEByCQ3AIDsEhOCQ4BIfgEByCQ3AIDsEhOASHBIfgEByCQ3AIDsEhOASH4BAcEhyCQ3AIDsGhZt2Gp15b12m5UgAAAABJRU5ErkJggg==">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="The 45">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<style>
+:root{
+  --ground:#EFF0EC; --surface:#FFFFFF; --ink:#15181A; --muted:#5F6669;
+  --rule:#D7D9D2; --accent:#C1441B; --accent-soft:#F5E4DD;
+  --good:#1F6B4A; --good-soft:#E1EFE7;
+  --vest:#15181A; --vest-ink:#FFFFFF; --field:#F6F6F3;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#121416; --surface:#1A1D20; --ink:#EBEBE5; --muted:#969C9F;
+    --rule:#292D31; --accent:#FF7247; --accent-soft:#35211B;
+    --good:#5FCB98; --good-soft:#172C23;
+    --vest:#EBEBE5; --vest-ink:#121416; --field:#101315;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#121416; --surface:#1A1D20; --ink:#EBEBE5; --muted:#969C9F;
+  --rule:#292D31; --accent:#FF7247; --accent-soft:#35211B;
+  --good:#5FCB98; --good-soft:#172C23;
+  --vest:#EBEBE5; --vest-ink:#121416; --field:#101315;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:var(--ground); color:var(--ink);
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI Variable Text","Segoe UI",Roboto,sans-serif;
+  font-size:17px; line-height:1.45; padding:0 14px 90px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:640px;margin:0 auto}
+.mono{font-family:ui-monospace,"Cascadia Mono","Segoe UI Mono",Consolas,monospace;font-variant-numeric:tabular-nums}
+
+/* header */
+header{padding:30px 0 16px}
+.kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+h1{font-size:clamp(36px,11vw,50px);line-height:.94;letter-spacing:-.035em;font-weight:800;margin:0}
+h1 em{font-style:normal;color:var(--accent)}
+.goal{margin:14px 0 0;padding:13px 15px;background:var(--surface);border:1px solid var(--rule);font-size:15px;line-height:1.5}
+.goal b{font-weight:700}
+.goal .d{color:var(--accent);font-weight:700}
+
+/* tabs */
+nav{position:sticky;top:0;z-index:20;background:var(--ground);padding:9px 0;margin:0 0 20px;border-bottom:1px solid var(--rule)}
+.tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:5px}
+.tab{appearance:none;cursor:pointer;font-size:12px;font-weight:700;letter-spacing:.06em;padding:11px 0;
+  background:var(--surface);color:var(--muted);border:1px solid var(--rule);border-radius:2px}
+.tab:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.tab .dot{display:block;width:5px;height:5px;border-radius:50%;background:var(--good);margin:4px auto -4px}
+.tab[aria-selected="true"] .dot{background:#fff}
+
+/* day */
+.day[hidden]{display:none}
+.dayname{font-size:clamp(25px,7vw,32px);font-weight:800;letter-spacing:-.02em;margin:0 0 20px;line-height:1.05}
+.dayname span{display:block;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+
+.blockhead{display:flex;align-items:baseline;gap:11px;padding:14px 0 7px}
+.clock{font-size:15px;font-weight:700;color:var(--accent);white-space:nowrap}
+.blabel{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+.vest{background:var(--vest);color:var(--vest-ink);font-size:12px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;text-align:center;padding:10px;margin:14px 0 2px}
+.vest.off{background:transparent;color:var(--muted);border:1px dashed var(--rule)}
+
+.list{display:flex;flex-direction:column;gap:2px}
+
+/* exercise row */
+.ex{background:var(--surface);border:1px solid var(--rule)}
+.ex.done{border-color:var(--good)}
+.exhead{width:100%;text-align:left;background:none;border:0;color:inherit;font:inherit;cursor:pointer;
+  padding:13px 15px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.exhead:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.name{font-weight:600;letter-spacing:-.01em}
+.sub{display:block;font-size:13.5px;font-weight:400;color:var(--muted);margin-top:3px}
+.sub .last{color:var(--good);font-weight:600}
+.tgt{font-size:15px;font-weight:700;white-space:nowrap;color:var(--accent)}
+.ex.done .tgt{color:var(--good)}
+.check{font-size:13px;color:var(--good);font-weight:700}
+
+/* log panel */
+.panel{border-top:1px solid var(--rule);padding:15px;display:none;background:var(--field)}
+.ex.open .panel{display:block}
+.prev{font-size:14px;color:var(--muted);margin:0 0 14px;padding:10px 12px;background:var(--surface);border:1px solid var(--rule)}
+.prev b{color:var(--ink)}
+.prev em{font-style:normal;display:block;margin-top:5px}
+.setrow{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 11px;align-items:center}
+.slot{display:flex;flex-direction:column;gap:3px}
+.slot label{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+input[type=number],input[type=text],textarea{
+  font:inherit;font-family:ui-monospace,"Cascadia Mono",Consolas,monospace;font-variant-numeric:tabular-nums;
+  background:var(--surface);color:var(--ink);border:1px solid var(--rule);border-radius:2px;padding:10px;width:100%}
+input[type=number]{width:62px;text-align:center;font-weight:700;font-size:17px}
+textarea{font-family:inherit;font-size:15px;min-height:62px;resize:vertical}
+input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:-1px;border-color:var(--accent)}
+.wt{width:80px!important}
+.btnrow{display:flex;gap:8px;margin-top:11px}
+button.act{flex:1;font:inherit;font-weight:700;font-size:15px;cursor:pointer;padding:13px;border-radius:2px;
+  background:var(--accent);color:#fff;border:1px solid var(--accent)}
+button.ghost{background:transparent;color:var(--muted);border:1px solid var(--rule);flex:0 0 auto;padding:13px 16px}
+button.act:focus-visible,button.ghost:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.hist{margin-top:12px;font-size:13.5px;color:var(--muted)}
+.hist h4{font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin:0 0 7px;color:var(--muted)}
+.hist div{padding:6px 0;border-top:1px solid var(--rule)}
+
+/* ladder */
+.ladder{background:var(--surface);border:1px solid var(--rule);padding:14px 15px;margin-top:2px}
+.ltitle{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 11px}
+.rung{display:flex;align-items:center;gap:11px;font-size:15px;color:var(--muted);padding:3px 0}
+.rung .n{font-family:ui-monospace,Consolas,monospace;font-size:11.5px;font-weight:700;width:21px;height:21px;flex:none;
+  display:grid;place-items:center;border:1px solid var(--rule);border-radius:50%}
+.rung.here{color:var(--ink);font-weight:700}
+.rung.here .n{background:var(--accent);border-color:var(--accent);color:#fff}
+.rung.past{color:var(--muted);text-decoration:line-through}
+.rung.past .n{background:var(--good);border-color:var(--good);color:#fff;text-decoration:none}
+.rung.goal .n{border-color:var(--accent);color:var(--accent)}
+.rung.goal{color:var(--ink);font-weight:600}
+.tag{font-family:ui-monospace,Consolas,monospace;font-size:10.5px;letter-spacing:.07em;color:var(--accent);font-weight:700}
+
+/* bands */
+.band{margin:26px 0 0;padding:20px;background:var(--surface);border:1px solid var(--rule)}
+.band.hot{background:var(--accent-soft);border-color:var(--accent)}
+.band h2{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.band.hot h2{color:var(--accent)}
+.band h3{font-size:20px;font-weight:800;letter-spacing:-.02em;margin:0 0 9px}
+.band p{margin:0 0 9px;font-size:15.5px}
+.band p:last-child{margin-bottom:0}
+
+/* pushups */
+.pubig{display:flex;align-items:baseline;gap:10px;margin:0 0 14px}
+.punum{font-family:ui-monospace,Consolas,monospace;font-size:52px;font-weight:800;line-height:1;color:var(--accent)}
+.pulbl{font-size:14px;color:var(--muted)}
+.dots{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.dot3{font:inherit;cursor:pointer;padding:15px 6px;background:var(--surface);border:1px solid var(--rule);
+  border-radius:2px;color:var(--muted);font-size:13px;font-weight:700;letter-spacing:.05em}
+.dot3[aria-pressed="true"]{background:var(--good);border-color:var(--good);color:#fff}
+.dot3:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* run timer */
+.timer{text-align:center;padding:6px 0 0}
+.tnum{font-family:ui-monospace,Consolas,monospace;font-size:64px;font-weight:800;line-height:1;letter-spacing:-.03em}
+.tnum.hit{color:var(--good)}
+.ttgt{font-size:14px;color:var(--muted);margin:8px 0 16px}
+.ttgt b{color:var(--accent)}
+.bar{height:5px;background:var(--rule);margin:0 0 16px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s linear}
+.bar i.hit{background:var(--good)}
+
+/* toast */
+#toast{position:fixed;left:14px;right:14px;bottom:16px;max-width:612px;margin:0 auto;z-index:50;
+  background:var(--good);color:#fff;padding:14px 16px;font-weight:700;font-size:15px;
+  transform:translateY(140%);transition:transform .28s ease;border-radius:2px}
+#toast.up{transform:translateY(0)}
+@media (prefers-reduced-motion:reduce){#toast,.bar i{transition:none}}
+
+footer{margin:34px 0 0;padding-top:18px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--muted)}
+footer button{margin:10px 8px 0 0}
+@media (max-width:400px){body{font-size:16px;padding:0 11px 90px}.tab{font-size:11px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="kicker">5:00 am · 45 minutes · hard stop</p>
+  <h1>The <em>45</em></h1>
+  <p class="goal"><b>One strict muscle-up by <span class="d">Nov 11</span>.</b><br>
+  Then: 5 wall handstand push-ups + a 30-second freestanding hold.</p>
+</header>
+
+<nav><div class="tabs" role="tablist" aria-label="Day">
+  <button class="tab" role="tab" aria-selected="false" data-i="0">MON</button>
+  <button class="tab" role="tab" aria-selected="false" data-i="1">TUE</button>
+  <button class="tab" role="tab" aria-selected="false" data-i="2">WED</button>
+  <button class="tab" role="tab" aria-selected="false" data-i="3">THU</button>
+  <button class="tab" role="tab" aria-selected="false" data-i="4">FRI</button>
+  <button class="tab" role="tab" aria-selected="false" data-i="5">DAILY</button>
+</div></nav>
+
+<div id="days"></div>
+
+<div id="daily" class="day" hidden>
+  <h2 class="dayname"><span>Every day</span>Push-ups &amp; the Run</h2>
+
+  <div class="band hot">
+    <h2>One set before each meal</h2>
+    <div class="pubig"><span class="punum" id="puSize">–</span><span class="pulbl">reps per set<br>3 sets a day</span></div>
+    <div class="dots">
+      <button class="dot3" id="pu0" aria-pressed="false">BREAKFAST</button>
+      <button class="dot3" id="pu1" aria-pressed="false">LUNCH</button>
+      <button class="dot3" id="pu2" aria-pressed="false">DINNER</button>
+    </div>
+    <p style="margin-top:14px"><b>The meal is your reminder.</b> Hungry means it's time. <b>Never to failure</b> — they only work because they stay easy. Goes up 1 rep every week on its own.</p>
+    <p id="puWeek" style="font-size:13.5px;color:var(--muted)"></p>
+  </div>
+
+  <div class="band">
+    <h2>The run · every day except Monday</h2>
+    <div class="timer">
+      <div class="tnum mono" id="rClock">0:00</div>
+      <p class="ttgt">Today's target: <b id="rTgt">3:00</b> · goal 5:00</p>
+      <div class="bar"><i id="rBar"></i></div>
+      <div class="btnrow">
+        <button class="act" id="rGo">Start</button>
+        <button class="ghost" id="rReset">Reset</button>
+      </div>
+    </div>
+    <p style="margin-top:16px;font-size:14px;color:var(--muted)">Hit the target and it goes up 15 seconds next week. <b>Skip Monday</b> — sprints are already your hard run, and stacking both is how hamstrings tear.</p>
+    <div class="hist" id="rHist"></div>
+  </div>
+
+  <div class="band">
+    <h2>Saturday challenge · once a week</h2>
+    <h3>Bring Sally Up</h3>
+    <p>Play the song, go as far as you can. This is the one time you go to failure — which is exactly why it can't be the daily sets.</p>
+    <div class="setrow" style="margin-top:12px">
+      <div class="slot"><label>Seconds lasted</label><input type="number" id="sallyV" min="0" inputmode="numeric"></div>
+      <div class="slot" style="flex:1;min-width:150px"><label>Note</label><input type="text" id="sallyN" placeholder="how it felt"></div>
+    </div>
+    <button class="act" id="sallyGo">Log it</button>
+    <div class="hist" id="sallyHist"></div>
+  </div>
+
+  <div class="band">
+    <h2>Baseline test · first Monday, before you start</h2>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:14px">Half the push-up number becomes your daily set size. 8+ pull-ups and Nov 11 is real.</p>
+    <div class="setrow">
+      <div class="slot"><label>Pull-ups</label><input type="number" id="tPull" min="0" inputmode="numeric"></div>
+      <div class="slot"><label>Ring dips</label><input type="number" id="tDip" min="0" inputmode="numeric"></div>
+      <div class="slot"><label>Handstand s</label><input type="number" id="tHs" min="0" inputmode="numeric"></div>
+      <div class="slot"><label>Push-ups</label><input type="number" id="tPush" min="0" inputmode="numeric"></div>
+    </div>
+    <button class="act" id="tSave">Save the baseline</button>
+    <p id="tOut" style="margin-top:12px;font-size:14px;color:var(--good);font-weight:600"></p>
+  </div>
+</div>
+
+<div class="band">
+  <h2>Four rules</h2>
+  <p><b>1 · Something goes up every session.</b> Weight, reps, depth, rung, or less help. Nothing moved twice in a row? Change the exercise. Not "try harder."</p>
+  <p><b>2 · The last 2 reps are hard.</b> Could've done 5 more? That was a warm-up. First block is the exception — it stops while you're still fast and clean.</p>
+  <p><b>3 · Chase two things, just do the rest.</b> Till Nov 11: the muscle-up and the ladder. After: jumps and the RDL.</p>
+  <p><b>4 · Vest on once, stays on.</b> Weight goes on the page, not in your head.</p>
+</div>
+
+<footer>
+  <p>Everything saves on this device. Back it up now and then.</p>
+  <button class="ghost" id="expBtn">Export backup</button>
+  <button class="ghost" id="impBtn">Import backup</button>
+  <input type="file" id="impFile" accept=".json,application/json" hidden>
+  <p id="storeWarn" style="color:var(--accent);font-weight:600"></p>
+</footer>
+
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+"use strict";
+
+/* ============ the program ============
+   type: w=weighted  r=reps  h=hold(sec)  lad=ladder  n=note only        */
+
+var RUNGS = ["Pike push-ups","Hands up on plates","Feet up on a box","Both at once","WALL HANDSTAND PUSH-UP"];
+
+var DAYS = [
+{name:"Monday", title:"Push + Sprints", blocks:[
+  {vest:"off", clock:"0 → 12", label:"Easy pace. Long rests.", ex:[
+    {id:"m1", n:"Handstand hold", s:"Feet on the wall", type:"h", sets:4, t:30, step:5},
+    {id:"m2", n:"Pike push-ups",  s:"Feet walked in close", type:"lad", sets:3, t:5}
+  ]},
+  {vest:"on", clock:"12 → 30", label:"Rest 75 seconds", ex:[
+    {id:"m3", n:"Ring dips",      type:"w", sets:3, t:5,  step:5},
+    {id:"m4", n:"Side raises",    type:"w", sets:3, t:15, step:2.5},
+    {id:"m5", n:"Shoulder press", type:"w", sets:3, t:8,  step:5},
+    {id:"m6", n:"Triceps ext",    type:"w", sets:3, t:12, step:2.5}
+  ]},
+  {vest:"off2", clock:"30 → 45", label:"Sprints", ex:[
+    {id:"m7", n:"Sprints 8 × 25s", s:"Walk all the way back. Getting slower? Stop.", type:"n"}
+  ]}
+]},
+{name:"Tuesday", title:"Pull + Carries", blocks:[
+  {vest:"none", clock:"0 → 8", label:"Warm up", ex:[
+    {id:"t1", n:"Hang from the bar", type:"h", sets:3, t:45, step:5},
+    {id:"t2", n:"Scap pull-ups",     type:"r", sets:3, t:8},
+    {id:"t3", n:"Band pull-aparts",  type:"r", sets:3, t:25},
+    {id:"t4", n:"Shoulder circles",  s:"2 rounds", type:"n"}
+  ]},
+  {vest:"", clock:"8 → 23", label:"Rest 90 seconds", ex:[
+    {id:"t5", n:"False grip hang", s:"Wrists ON TOP of the rings. No wrist over the ring means no muscle-up. Ever.", type:"h", sets:3, t:30, step:5},
+    {id:"t6", n:"Pull-ups",        s:"5 sets at about 6 in 10 of your max. Never to failure.", type:"r", sets:5, t:6}
+  ]},
+  {vest:"", clock:"23 → 37", label:"Rest 60s. The hard part.", ex:[
+    {id:"t7", n:"Farmer carry", s:"3 × 40 yards, heaviest dumbbells", type:"w", sets:3, t:1, step:5},
+    {id:"t8", n:"Ring rows",    type:"r", sets:3, t:12},
+    {id:"t9", n:"Dead bug",     type:"r", sets:2, t:12}
+  ]},
+  {vest:"", clock:"37 → 45", label:"Run", ex:[
+    {id:"t10", n:"Easy run 8 min", type:"n"}
+  ]}
+]},
+{name:"Wednesday", title:"Legs + Jumps", blocks:[
+  {vest:"off", clock:"0 → 12", label:"Rest 3 min. Do not rush these.", ex:[
+    {id:"w1", n:"Box or broad jumps", s:"5 × 3. Step down off the box, never jump down. Land quiet. Stop when they stop feeling springy.", type:"n"}
+  ]},
+  {vest:"on", clock:"12 → 32", label:"Rest 75 seconds", ex:[
+    {id:"w2", n:"Split squats",  s:"each leg", type:"w", sets:3, t:8,  step:5},
+    {id:"w3", n:"Calf raises",   type:"r", sets:3, t:15},
+    {id:"w4", n:"Dumbbell RDL",  s:"The back lift. Chase this one after Nov 11.", type:"w", sets:3, t:8, step:5},
+    {id:"w5", n:"Hip thrust",    type:"w", sets:3, t:12, step:5}
+  ]},
+  {vest:"", clock:"32 → 45", label:"Rest 45s. Brutal.", ex:[
+    {id:"w6", n:"Nordic curls",    s:"5 seconds down. Hands ready to catch you.", type:"r", sets:2, t:5},
+    {id:"w7", n:"Back extensions", type:"r", sets:3, t:12},
+    {id:"w8", n:"Ab wheel",        type:"r", sets:3, t:8}
+  ]}
+]},
+{name:"Thursday", title:"Muscle-up Day", blocks:[
+  {vest:"off", clock:"0 → 15", label:"Fresh. Never a vest on skill work.", ex:[
+    {id:"h1", n:"High pulls 5 × 3", s:"Pull as high as you physically can. Aim the rings at your lower chest.", type:"n"},
+    {id:"h2", n:"Negatives 4 × 2",  s:"Start on top. 5 seconds down. WRITE DOWN how much help you used — ring height, or how far forward your feet are. Take a little off every week. That number IS the workout.", type:"n"},
+    {id:"h3", n:"Front lever tuck", s:"Do these during the rests", type:"h", sets:4, t:12, step:2}
+  ]},
+  {vest:"on", clock:"15 → 33", label:"Rest 75 seconds", ex:[
+    {id:"h4", n:"Weighted pull-ups", s:"Write the weight down. Every single time.", type:"w", sets:3, t:5, step:5},
+    {id:"h5", n:"Face pulls",  type:"w", sets:3, t:15, step:2.5},
+    {id:"h6", n:"Ring rows",   type:"r", sets:3, t:10},
+    {id:"h7", n:"Curls",       type:"w", sets:3, t:12, step:2.5}
+  ]},
+  {vest:"", clock:"33 → 45", label:"Run", ex:[
+    {id:"h8", n:"Easy run 12 min", type:"n"}
+  ]}
+]},
+{name:"Friday", title:"Skill + Pump", blocks:[
+  {vest:"off", clock:"0 → 12", label:"No rush", ex:[
+    {id:"f1", n:"Handstand practice", s:"10 min of kick-ups. Log your best hold. Going for 30s.", type:"h", sets:1, t:10, step:2},
+    {id:"f2", n:"Wall handstand push-up", s:"One set, as many as you get. Zero is a fine answer — it still counts as the test.", type:"r", sets:1, t:1}
+  ]},
+  {vest:"on", clock:"12 → 40", label:"4 rounds · rest 60s between rounds only", ex:[
+    {id:"f3", n:"Ring push-ups", s:"12 per round", type:"r", sets:4, t:12},
+    {id:"f4", n:"Chin-ups",      s:"6 per round",  type:"r", sets:4, t:6},
+    {id:"f5", n:"Ring rows",     s:"12 per round", type:"r", sets:4, t:12},
+    {id:"f6", n:"Curls",         type:"w", sets:4, t:12, step:2.5},
+    {id:"f7", n:"Side raises",   type:"w", sets:4, t:15, step:2.5}
+  ]},
+  {vest:"", clock:"40 → 45", label:"Finish", ex:[
+    {id:"f8", n:"Hollow hold", type:"h", sets:3, t:30, step:5}
+  ]}
+]}
+];
+
+var EX = {};
+DAYS.forEach(function(d){ d.blocks.forEach(function(b){ b.ex.forEach(function(e){ EX[e.id] = e; }); }); });
+
+/* ============ storage ============ */
+var KEY = "the45.v1", canStore = true, DB;
+
+function blank(){
+  return {v:1, start:today(), ex:{}, pu:{max:null,size:null,days:{},sally:[]},
+          run:{target:180,hist:[]}, test:{}};
+}
+function load(){
+  try{
+    var raw = localStorage.getItem(KEY);
+    DB = raw ? JSON.parse(raw) : blank();
+  }catch(e){ canStore=false; DB = blank(); }
+  if(!DB.ex) DB.ex={};
+  if(!DB.pu) DB.pu={max:null,size:null,days:{},sally:[]};
+  if(!DB.run) DB.run={target:180,hist:[]};
+  if(!DB.test) DB.test={};
+  if(!DB.start) DB.start=today();
+}
+function save(){
+  if(!canStore) return;
+  try{ localStorage.setItem(KEY, JSON.stringify(DB)); }
+  catch(e){ canStore=false; warnStore(); }
+}
+function warnStore(){
+  document.getElementById("storeWarn").textContent =
+    "This browser is blocking storage, so nothing will be remembered. Export after each session, or open the file in Chrome or Edge.";
+}
+
+function today(){
+  var d=new Date();
+  return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
+}
+function pad(n){ return n<10 ? "0"+n : ""+n; }
+function weekNo(){
+  var s=new Date(DB.start+"T00:00:00"), n=new Date(today()+"T00:00:00");
+  return Math.max(0, Math.floor((n-s)/604800000));
+}
+function pretty(iso){
+  var p=iso.split("-");
+  return ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][+p[1]-1]+" "+(+p[2]);
+}
+function num(v){ return Math.round(v*10)/10; }
+
+/* ============ per-exercise state ============ */
+function st(id){
+  var e = EX[id];
+  if(!DB.ex[id]){
+    DB.ex[id] = {t: e.t||0, w: 0, rung: 0, hist: [], bumped: ""};
+  }
+  return DB.ex[id];
+}
+function targetText(id){
+  var e=EX[id], s=st(id);
+  if(e.type==="n") return "log it";
+  if(e.type==="h") return e.sets+" × "+s.t+"s";
+  if(e.type==="w") return e.sets+" × "+s.t+(s.w>0 ? "  @"+num(s.w) : "");
+  return e.sets+" × "+s.t;
+}
+
+/* the progression engine — runs on every save */
+function progress(id, vals){
+  var e=EX[id], s=st(id), msg="";
+  if(e.type==="n") return "";
+  if(s.bumped === today()) return "";           // one bump per day, max
+
+  var hit = vals.length>0 && vals.every(function(v){ return v >= s.t; });
+  if(!hit){
+    var h=s.hist;
+    if(h.length>=2){
+      var a=h[h.length-1], b=h[h.length-2];
+      var miss=function(x){ return !x.vals.every(function(v){ return v>=x.t; }); };
+      if(miss(a)&&miss(b)) return "Third miss on this one. Change the exercise or drop the target — not 'try harder'.";
+    }
+    return "";
+  }
+
+  if(e.type==="lad"){
+    if(s.t >= 8){
+      if(s.rung < RUNGS.length-1){ s.rung++; s.t = 5;
+        msg = "Rung "+(s.rung+1)+" unlocked → "+RUNGS[s.rung]+". Back to 3 × 5."; }
+      else msg = "Top rung, 3 × 8 clean. That's the goal — tell Claude.";
+    } else { s.t++; msg = "Up to 3 × "+s.t+" next time."; }
+  } else if(e.type==="h"){
+    s.t += (e.step||5); msg = "Up to "+e.sets+" × "+s.t+"s next time.";
+  } else if(e.type==="w"){
+    s.w += (e.step||5); msg = "Up to "+num(s.w)+" lb next time.";
+  } else {
+    s.t++; msg = "Up to "+e.sets+" × "+s.t+" next time.";
+  }
+  s.bumped = today();
+  return msg;
+}
+
+/* ============ render the days ============ */
+function buildDays(){
+  var host=document.getElementById("days"), html="";
+  DAYS.forEach(function(d,di){
+    html += '<section class="day" id="day'+di+'" hidden>';
+    html += '<h2 class="dayname"><span>'+d.name+'</span>'+d.title+'</h2>';
+    d.blocks.forEach(function(b){
+      if(b.vest==="on")   html += '<div class="vest">Vest on — leave it on</div>';
+      if(b.vest==="off")  html += '<div class="vest off">No vest yet</div>';
+      if(b.vest==="off2") html += '<div class="vest off">Vest off</div>';
+      if(b.vest==="none") html += '<div class="vest off">No vest today</div>';
+      html += '<div class="blockhead"><span class="clock mono">'+b.clock+'</span><span class="blabel">'+b.label+'</span></div>';
+      html += '<div class="list">';
+      b.ex.forEach(function(e){ html += exHTML(e); });
+      html += '</div>';
+      if(b.ex.some(function(e){return e.type==="lad";})) html += ladderHTML();
+    });
+    html += '</section>';
+  });
+  host.innerHTML = html;
+  host.querySelectorAll(".exhead").forEach(function(btn){
+    btn.addEventListener("click", function(){ toggle(btn.dataset.id); });
+  });
+}
+
+function exHTML(e){
+  return '<div class="ex" id="ex-'+e.id+'">'+
+    '<button class="exhead" data-id="'+e.id+'" aria-expanded="false">'+
+      '<span class="name">'+e.n+'<span class="sub" id="sub-'+e.id+'"></span></span>'+
+      '<span class="tgt mono" id="tgt-'+e.id+'"></span>'+
+    '</button>'+
+    '<div class="panel" id="pan-'+e.id+'"></div></div>';
+}
+
+function ladderHTML(){
+  var s=st("m2"), h='<div class="ladder"><p class="ltitle">The ladder to a handstand push-up</p>';
+  RUNGS.forEach(function(r,i){
+    var cls = i<s.rung ? "past" : (i===s.rung ? "here" : (i===RUNGS.length-1 ? "goal" : ""));
+    var tag = i===s.rung ? '<span class="tag">YOU ARE HERE</span>'
+            : (i===RUNGS.length-1 && i!==s.rung ? '<span class="tag">NOV 11</span>' : '');
+    h += '<div class="rung '+cls+'"><span class="n">'+(i+1)+'</span>'+r+' '+tag+'</div>';
+  });
+  return h+'<p style="margin:12px 0 0;padding-top:12px;border-top:1px solid var(--rule);font-size:14px;color:var(--muted)">Hit <b>3 × 8</b> clean and the app moves you up a rung on its own.</p></div>';
+}
+
+function paintRow(id){
+  var e=EX[id], s=st(id), row=document.getElementById("ex-"+id);
+  document.getElementById("tgt-"+id).textContent = targetText(id);
+  var last = s.hist[s.hist.length-1];
+  var sub = e.s ? e.s : "";
+  if(last){
+    var done = last.d===today();
+    var v = e.type==="n" ? "done" : last.vals.join(" / ") + (last.w>0 ? "  @"+num(last.w) : "");
+    sub = (sub ? sub+"<br>" : "") +
+      '<span class="last">'+(done ? "✓ today" : pretty(last.d))+' · '+v+'</span>';
+    row.classList.toggle("done", done);
+  } else row.classList.remove("done");
+  document.getElementById("sub-"+id).innerHTML = sub;
+}
+
+function toggle(id){
+  var row=document.getElementById("ex-"+id), btn=row.querySelector(".exhead");
+  var open=row.classList.contains("open");
+  if(open){ row.classList.remove("open"); btn.setAttribute("aria-expanded","false"); return; }
+  document.querySelectorAll(".ex.open").forEach(function(o){
+    o.classList.remove("open"); o.querySelector(".exhead").setAttribute("aria-expanded","false");
+  });
+  row.classList.add("open"); btn.setAttribute("aria-expanded","true");
+  paintPanel(id);
+}
+
+function paintPanel(id){
+  var e=EX[id], s=st(id), p=document.getElementById("pan-"+id), h="";
+  var last=s.hist[s.hist.length-1];
+
+  if(last){
+    var v = e.type==="n" ? "done" : last.vals.join(" / ")+(last.w>0 ? "  @"+num(last.w)+" lb" : "");
+    h += '<div class="prev"><b>Last time ('+pretty(last.d)+'):</b> '+v+
+         (last.note ? '<em>“'+esc(last.note)+'”</em>' : '')+'</div>';
+  } else {
+    h += '<div class="prev">First time. Whatever you do today becomes the number to beat.</div>';
+  }
+
+  if(e.type!=="n"){
+    var unit = e.type==="h" ? "SEC" : "REPS";
+    h += '<div class="setrow">';
+    for(var i=0;i<e.sets;i++){
+      h += '<div class="slot"><label>'+unit+' '+(i+1)+'</label>'+
+           '<input type="number" min="0" inputmode="numeric" data-set="'+i+'" '+
+           'value="'+(last&&last.vals[i]!=null?last.vals[i]:"")+'" placeholder="'+s.t+'"></div>';
+    }
+    if(e.type==="w"){
+      h += '<div class="slot"><label>WEIGHT LB</label>'+
+           '<input type="number" min="0" step="0.5" inputmode="decimal" class="wt" id="w-'+id+'" value="'+(s.w||"")+'" placeholder="0"></div>';
+    }
+    h += '</div>';
+  }
+
+  h += '<textarea id="note-'+id+'" placeholder="How did it feel? Anything you want to remember next week."></textarea>';
+  h += '<div class="btnrow"><button class="act" data-save="'+id+'">Save</button>'+
+       '<button class="ghost" data-close="'+id+'">Close</button></div>';
+
+  if(s.hist.length){
+    h += '<div class="hist"><h4>History</h4>';
+    s.hist.slice(-6).reverse().forEach(function(x){
+      var v = e.type==="n" ? "done" : x.vals.join(" / ")+(x.w>0 ? "  @"+num(x.w) : "");
+      h += '<div><b>'+pretty(x.d)+'</b> · '+v+(x.note ? ' — '+esc(x.note) : '')+'</div>';
+    });
+    h += '</div>';
+  }
+
+  p.innerHTML = h;
+  p.querySelector("[data-save]").addEventListener("click", function(){ doSave(id); });
+  p.querySelector("[data-close]").addEventListener("click", function(){ toggle(id); });
+}
+
+function esc(t){ return String(t).replace(/[<>&"]/g, function(c){
+  return {"<":"&lt;",">":"&gt;","&":"&amp;",'"':"&quot;"}[c]; }); }
+
+function doSave(id){
+  var e=EX[id], s=st(id), p=document.getElementById("pan-"+id);
+  var vals=[], w=0;
+  if(e.type!=="n"){
+    p.querySelectorAll("[data-set]").forEach(function(inp){
+      vals.push(inp.value==="" ? 0 : Number(inp.value));
+    });
+    var wi=document.getElementById("w-"+id);
+    if(wi) w = wi.value==="" ? 0 : Number(wi.value);
+  }
+  var note=(document.getElementById("note-"+id).value||"").trim();
+
+  s.hist.push({d:today(), vals:vals, w:w, note:note, t:s.t});
+  if(e.type==="w" && w>0) s.w = w;              // trust what he actually lifted
+  var msg = progress(id, vals);
+  save();
+
+  toggle(id);
+  paintRow(id);
+  if(EX["m2"] && id==="m2") buildAll();
+  toast(msg || "Logged.");
+}
+
+/* ============ push-ups ============ */
+function puSize(){
+  if(DB.pu.max==null) return null;
+  return Math.max(1, Math.round(DB.pu.max/2) + weekNo());
+}
+function paintPu(){
+  var size=puSize();
+  document.getElementById("puSize").textContent = size==null ? "–" : size;
+  var d=DB.pu.days[today()]||[0,0,0];
+  for(var i=0;i<3;i++){
+    document.getElementById("pu"+i).setAttribute("aria-pressed", d[i]?"true":"false");
+  }
+  document.getElementById("puWeek").textContent = size==null
+    ? "Do the baseline test below and this fills itself in."
+    : "Week "+(weekNo()+1)+" · started at "+Math.round(DB.pu.max/2)+", +1 rep every week.";
+}
+[0,1,2].forEach(function(i){
+  document.getElementById("pu"+i).addEventListener("click", function(){
+    var d = DB.pu.days[today()] || [0,0,0];
+    d[i] = d[i] ? 0 : 1;
+    DB.pu.days[today()] = d;
+    save(); paintPu();
+    if(d[0]&&d[1]&&d[2]) toast("All three sets today. That's how the number climbs.");
+  });
+});
+
+/* ============ the run ============ */
+var rT=0, rTick=null;
+function fmt(s){ return Math.floor(s/60)+":"+pad(s%60); }
+function paintRun(){
+  document.getElementById("rTgt").textContent = fmt(DB.run.target);
+  document.getElementById("rClock").textContent = fmt(rT);
+  var pctEl=document.getElementById("rBar"), hit = rT>=DB.run.target;
+  pctEl.style.width = Math.min(100, (rT/DB.run.target)*100)+"%";
+  pctEl.classList.toggle("hit", hit);
+  document.getElementById("rClock").classList.toggle("hit", hit);
+  var h=DB.run.hist.slice(-5).reverse().map(function(x){
+    return '<div><b>'+pretty(x.d)+'</b> · '+fmt(x.s)+'</div>'; }).join("");
+  document.getElementById("rHist").innerHTML = h ? '<h4>Last runs</h4>'+h : "";
+}
+document.getElementById("rGo").addEventListener("click", function(){
+  var b=this;
+  if(rTick){
+    clearInterval(rTick); rTick=null; b.textContent="Start";
+    if(rT>0){
+      DB.run.hist.push({d:today(), s:rT});
+      var msg="Logged "+fmt(rT)+".";
+      if(rT>=DB.run.target && DB.run.target<300){
+        DB.run.target=Math.min(300, DB.run.target+15);
+        msg="Hit it. Target is "+fmt(DB.run.target)+" next week.";
+      } else if(rT>=DB.run.target){ msg="Five minutes. That was the goal."; }
+      save(); toast(msg);
+    }
+    paintRun();
+  } else {
+    rTick=setInterval(function(){ rT++; paintRun(); },1000);
+    b.textContent="Stop & log";
+  }
+});
+document.getElementById("rReset").addEventListener("click", function(){
+  if(rTick){ clearInterval(rTick); rTick=null; document.getElementById("rGo").textContent="Start"; }
+  rT=0; paintRun();
+});
+
+/* ============ sally ============ */
+function paintSally(){
+  var h=DB.pu.sally.slice(-5).reverse().map(function(x){
+    return '<div><b>'+pretty(x.d)+'</b> · '+x.s+'s'+(x.note?' — '+esc(x.note):'')+'</div>'; }).join("");
+  document.getElementById("sallyHist").innerHTML = h ? '<h4>Best so far</h4>'+h : "";
+}
+document.getElementById("sallyGo").addEventListener("click", function(){
+  var v=Number(document.getElementById("sallyV").value||0);
+  if(!v) return toast("Put the seconds in first.");
+  var best = DB.pu.sally.reduce(function(m,x){ return Math.max(m,x.s); },0);
+  DB.pu.sally.push({d:today(), s:v, note:(document.getElementById("sallyN").value||"").trim()});
+  save(); paintSally();
+  document.getElementById("sallyV").value=""; document.getElementById("sallyN").value="";
+  toast(v>best ? "New best by "+(v-best)+" seconds." : "Logged. Best is still "+best+"s.");
+});
+
+/* ============ baseline ============ */
+document.getElementById("tSave").addEventListener("click", function(){
+  var g=function(i){ var v=document.getElementById(i).value; return v===""?null:Number(v); };
+  DB.test={pull:g("tPull"), dip:g("tDip"), hs:g("tHs"), push:g("tPush")};
+  if(DB.test.push!=null){ DB.pu.max=DB.test.push; DB.start=today(); }
+  if(DB.test.dip!=null) st("m3").t = Math.max(5, Math.min(DB.test.dip, 8));
+  save(); paintPu(); paintAllRows();
+  var out=document.getElementById("tOut"), lines=[];
+  if(DB.test.push!=null) lines.push("Daily push-up sets: "+Math.round(DB.test.push/2)+" reps, three times a day.");
+  if(DB.test.pull!=null) lines.push(DB.test.pull>=8
+    ? "Pull-ups "+DB.test.pull+" — Nov 11 is real. Go."
+    : "Pull-ups "+DB.test.pull+" — under 8, so the date needs to move to spring. Tell Claude and it gets rewritten.");
+  out.textContent = lines.join("  ");
+  toast("Baseline saved.");
+});
+function paintTest(){
+  if(DB.test.pull!=null) document.getElementById("tPull").value=DB.test.pull;
+  if(DB.test.dip!=null)  document.getElementById("tDip").value=DB.test.dip;
+  if(DB.test.hs!=null)   document.getElementById("tHs").value=DB.test.hs;
+  if(DB.test.push!=null) document.getElementById("tPush").value=DB.test.push;
+}
+
+/* ============ backup ============ */
+document.getElementById("expBtn").addEventListener("click", function(){
+  var blob=new Blob([JSON.stringify(DB,null,2)],{type:"application/json"});
+  var a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="the45-backup-"+today()+".json";
+  document.body.appendChild(a); a.click();
+  setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); },1000);
+  toast("Backup downloaded.");
+});
+document.getElementById("impBtn").addEventListener("click", function(){ document.getElementById("impFile").click(); });
+document.getElementById("impFile").addEventListener("change", function(){
+  var f=this.files[0]; if(!f) return;
+  var r=new FileReader();
+  r.onload=function(){
+    try{
+      var d=JSON.parse(r.result);
+      if(!d || typeof d!=="object" || !("ex" in d)) throw 0;
+      DB=d; load2(); save(); buildAll(); toast("Backup restored.");
+    }catch(e){ toast("That file isn't a backup from this app."); }
+  };
+  r.readAsText(f); this.value="";
+});
+function load2(){
+  if(!DB.ex) DB.ex={}; if(!DB.pu) DB.pu={max:null,size:null,days:{},sally:[]};
+  if(!DB.run) DB.run={target:180,hist:[]}; if(!DB.test) DB.test={};
+  if(!DB.start) DB.start=today();
+}
+
+/* ============ toast ============ */
+var tTimer=null;
+function toast(m){
+  if(!m) return;
+  var t=document.getElementById("toast");
+  t.textContent=m; t.classList.add("up");
+  clearTimeout(tTimer); tTimer=setTimeout(function(){ t.classList.remove("up"); }, 4200);
+}
+
+/* ============ tabs ============ */
+var tabs=Array.prototype.slice.call(document.querySelectorAll(".tab"));
+function show(i){
+  tabs.forEach(function(t,n){ t.setAttribute("aria-selected", n===i?"true":"false"); });
+  DAYS.forEach(function(d,n){ document.getElementById("day"+n).hidden = (n!==i); });
+  document.getElementById("daily").hidden = (i!==5);
+  window.scrollTo({top:0,behavior:"instant"});
+}
+tabs.forEach(function(t,i){
+  t.addEventListener("click", function(){ show(i); });
+  t.addEventListener("keydown", function(e){
+    var nx = e.key==="ArrowRight" ? i+1 : e.key==="ArrowLeft" ? i-1 : null;
+    if(nx===null) return;
+    e.preventDefault(); nx=(nx+tabs.length)%tabs.length;
+    tabs[nx].focus(); show(nx);
+  });
+});
+
+/* ============ go ============ */
+function paintAllRows(){ Object.keys(EX).forEach(paintRow); markDots(); }
+function markDots(){
+  DAYS.forEach(function(d,i){
+    var all=[], any=false;
+    d.blocks.forEach(function(b){ b.ex.forEach(function(e){ all.push(e.id); }); });
+    all.forEach(function(id){
+      var h=st(id).hist; if(h.length && h[h.length-1].d===today()) any=true;
+    });
+    var t=tabs[i], dot=t.querySelector(".dot");
+    if(any && !dot){ var s=document.createElement("span"); s.className="dot"; t.appendChild(s); }
+    if(!any && dot) dot.remove();
+  });
+}
+function buildAll(){ buildDays(); paintAllRows(); paintPu(); paintRun(); paintSally(); paintTest(); }
+
+if(location.protocol.indexOf('http')===0 && 'serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js').catch(function(){});
+}
+
+load();
+if(!canStore) warnStore();
+buildAll();
+var wd=new Date().getDay();                 // 0 Sun … 6 Sat
+show(wd>=1 && wd<=5 ? wd-1 : 5);            // weekend opens on DAILY
+</script>
+</body>
+</html>
