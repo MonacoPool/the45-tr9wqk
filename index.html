@@ -286,7 +286,7 @@ var DAYS = [
     {id:"m2", n:"Pike push-ups",  s:"Feet walked in close", type:"lad", sets:3, t:5}
   ]},
   {vest:"on", clock:"12 → 30", label:"Rest 75 seconds", ex:[
-    {id:"m3", n:"Ring dips",      s:"Lean the torso FORWARD, not upright — upright is a triceps dip, forward is a chest dip. Full depth, controlled. This is your heavy chest work.", type:"w", sets:3, t:5,  step:5},
+    {id:"m3", n:"Ring dips",      s:"Lean the torso FORWARD, not upright — upright is a triceps dip, forward is a chest dip. Full depth, controlled. NO VEST ON THESE YET — your max is 7, so bodyweight until you own 3 × 8. The vest comes after. This is the lift that decides the muscle-up: the second half of a muscle-up IS a dip.", type:"w", sets:3, t:5,  step:5},
     {id:"m4", n:"Side raises",    type:"w", sets:3, t:15, step:2.5},
     {id:"m5", n:"Shoulder press", type:"w", sets:3, t:8,  step:5},
     {id:"m6", n:"Triceps ext",    type:"w", sets:3, t:12, step:2.5}
@@ -447,6 +447,9 @@ function progress(id, vals, w){
     } else { s.t++; msg = "Up to 3 × "+s.t+" next time."; }
   } else if(e.type==="h"){
     s.t += (e.step||5); msg = "Up to "+e.sets+" × "+s.t+"s next time.";
+  } else if(e.type==="w" && w===0 && s.t < 8){
+    // bodyweight and still under 8 reps — earn the reps before you earn the load
+    s.t++; msg = "Up to "+e.sets+" × "+s.t+" next time. Bodyweight until 3 × 8, then the vest.";
   } else if(e.type==="w"){
     s.w += (e.step||5); msg = "Up to "+num(s.w)+" lb next time.";
   } else if(w > 0){
@@ -723,7 +726,10 @@ document.getElementById("tSave").addEventListener("click", function(){
     // the +1-per-week clock starts ONCE — retesting updates the max, never restarts the climb
     if(!DB.pu.started){ DB.start=today(); DB.pu.started=true; }
   }
-  if(DB.test.dip!=null) st("m3").t = Math.max(5, Math.min(DB.test.dip, 8));
+  // working sets sit BELOW the max — 3 sets at your max-rep number is not a workout, it's a wall
+  if(DB.test.dip!=null)  st("m3").t = Math.max(3, Math.min(DB.test.dip - 2, 8));
+  if(DB.test.pull!=null) st("t6").t = Math.max(3, Math.round(DB.test.pull * 0.6));   // Tue volume = ~60% of max
+  if(DB.test.pull!=null) st("h4").t = Math.max(3, Math.min(DB.test.pull - 5, 6));    // Thu heavy triple/five
   save(); paintPu(); paintAllRows();
   var out=document.getElementById("tOut"), lines=[];
   if(DB.test.push!=null) lines.push("Daily push-up sets: "+Math.round(DB.test.push/2)+" reps, three times a day.");
