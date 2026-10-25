@@ -172,31 +172,18 @@ footer{margin:34px 0 0;padding-top:18px;border-top:1px solid var(--rule);font-si
 footer button{margin:10px 8px 0 0}
 @media (max-width:400px){body{font-size:16px;padding:0 11px 90px}.tab{font-size:11px}}
 
-/* Hybrid plan: scoped styles; original engine remains unchanged. */
+/* Familiar workout rows; details appear only when opened. */
 [hidden]{display:none!important}
-.plan-top{padding:16px 0 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.plan-top button{font:700 15px var(--body,system-ui,sans-serif);border:1px solid var(--accent);border-radius:8px;background:var(--accent-soft);color:var(--ink);padding:11px 14px;min-height:44px}
-.plan-top span{font-size:13px;color:var(--muted)}
-#newPlan h1{margin:22px 0 16px} #newPlan h2{font-family:var(--display,system-ui,sans-serif);font-size:28px;line-height:1.1}
-#newPlan a{color:var(--accent);text-decoration:underline} #newPlan h3{font-family:var(--label,system-ui,sans-serif);font-size:20px;margin:14px 0 6px}
-#newPlan p{margin:8px 0} #newPlan .hy-muted{font-size:14px;color:var(--muted)}
-#newPlan .hy-tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;position:sticky;top:0;padding:10px 0;background:var(--ground);z-index:21}
-#newPlan button,#newPlan input,#newPlan select,#newPlan textarea{font:inherit}
-#newPlan button{cursor:pointer;min-height:44px}
-#newPlan .hy-tabs button{padding:10px 3px;background:var(--surface);color:var(--ink);border:1px solid var(--rule);border-radius:6px}
-#newPlan .hy-tabs button[aria-pressed=true]{background:var(--accent);color:var(--ground)}
-#newPlan label{display:block;font-size:14px;color:var(--muted)}
-#newPlan input,#newPlan select,#newPlan textarea{background:var(--field);border:1px solid var(--rule);color:var(--ink);padding:10px;border-radius:6px;width:100%;min-width:0}
-#newPlan textarea{min-height:75px;resize:vertical}
-#newPlan .hy-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:12px 0}
-#newPlan .hy-card{border:1px solid var(--rule);background:var(--surface);border-radius:8px;margin:10px 0;padding:12px}
-#newPlan .hy-card summary{font-weight:700;cursor:pointer;min-height:44px;padding:5px 0}
-#newPlan .hy-history{overflow-wrap:anywhere;font-size:14px;border-top:1px solid var(--rule);margin-top:14px;padding-top:8px}
-#newPlan .hy-status:not(:empty){border:1px solid var(--accent);padding:12px;border-radius:8px;margin:12px 0;overflow-wrap:anywhere}
-#newPlan .hy-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-#newPlan .hy-actions button{padding:9px 13px;background:var(--accent);color:var(--ground);border:0;border-radius:6px;font-weight:700}
-#newPlan .hy-clock{font-family:var(--label,system-ui,sans-serif);font-weight:700;color:var(--accent);font-size:14px;margin:24px 0 4px}
-#newPlan :focus-visible,.plan-top button:focus-visible{outline:3px solid var(--good);outline-offset:3px}
+.plan-top{padding:14px 0 0}.plan-top button{background:none;color:var(--muted);border:1px solid var(--rule);padding:9px 12px;min-height:44px;border-radius:3px;font:inherit;font-size:13px;cursor:pointer}#planName{display:none}
+#newPlan{padding-top:24px}#newPlan .hy-head{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:18px}#newPlan h1{font-size:44px;margin:0;line-height:1}#newPlan .hy-subtitle{font-size:13px;color:var(--muted);margin:6px 0 0}#newPlan .hy-week{font-size:12px;color:var(--muted);width:100px}#newPlan select{width:100%;margin-top:3px}
+#newPlan h2{font-size:25px;line-height:1.2;margin:22px 0 14px;letter-spacing:-.02em}#newPlan p{margin:9px 0}#newPlan .hy-muted{font-size:13px;color:var(--muted)}#newPlan a{color:var(--accent)}
+#newPlan button,#newPlan input,#newPlan select,#newPlan textarea{font:inherit}#newPlan button{cursor:pointer;min-height:44px}#newPlan label{display:block;font-size:12px;color:var(--muted)}#newPlan input,#newPlan select,#newPlan textarea{background:var(--surface);border:1px solid var(--rule);color:var(--ink);padding:10px;border-radius:3px;min-width:0}#newPlan select{font-size:14px}#newPlan textarea,#newPlan input[type=text]{width:100%}#newPlan textarea{min-height:65px;resize:vertical}#newPlan input[type=number]{width:70px;text-align:center;font-weight:700}
+#newPlan .hy-tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;position:sticky;top:0;padding:9px 0;background:var(--ground);z-index:21;border-bottom:1px solid var(--rule)}#newPlan .hy-tabs button{padding:9px 3px;background:var(--surface);color:var(--muted);border:1px solid var(--rule);border-radius:3px;font-size:13px;font-weight:700}#newPlan .hy-tabs button[aria-pressed=true]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+#newPlan .hy-block{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:20px 0 7px;font-size:12px;color:var(--muted)}#newPlan .hy-clock{font-size:14px;font-weight:700;color:var(--accent)}
+#newPlan .hy-card{background:var(--surface);border:1px solid var(--rule);margin:3px 0;border-radius:3px}#newPlan .hy-card.hy-done{border-color:var(--good)}#newPlan .hy-card>summary{display:flex;align-items:center;justify-content:space-between;gap:10px;cursor:pointer;min-height:60px;padding:12px 14px;list-style:none}#newPlan summary::-webkit-details-marker{display:none}#newPlan .hy-name{font-size:16px;font-weight:600;line-height:1.25}#newPlan .hy-target{color:var(--accent);font-size:14px;font-weight:700;text-align:right;white-space:nowrap}#newPlan .hy-done .hy-target{color:var(--good)}#newPlan .hy-last{display:block;font-size:12px;font-weight:400;color:var(--good);margin-top:4px}#newPlan .hy-card form{border-top:1px solid var(--rule);padding:14px;background:var(--field)}
+#newPlan .hy-fields{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 12px}#newPlan .hy-fields label{display:flex;flex-direction:column;gap:4px}#newPlan .hy-option{border-top:1px solid var(--rule);margin-top:12px;padding-top:7px;font-size:14px;color:var(--muted)}#newPlan .hy-option>summary{min-height:40px;cursor:pointer;display:flex;align-items:center}#newPlan .hy-option>summary:after{content:'+';margin-left:auto}#newPlan .hy-option[open]>summary:after{content:'−'}#newPlan .hy-option p{font-size:14px;line-height:1.45}#newPlan .hy-option label{margin:8px 0}#newPlan .hy-history{font-size:13px;overflow-wrap:anywhere}#newPlan .hy-history p{padding:8px 0;border-top:1px solid var(--rule)}
+#newPlan .hy-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}#newPlan .hy-actions button{padding:11px 16px;background:var(--accent);color:#fff;border:0;border-radius:3px;font-weight:700}#newPlan .hy-actions button[type=submit]{width:100%}#newPlan .hy-status:empty{display:none}#newPlan .hy-status:not(:empty){font-size:13px;color:var(--good);margin:10px 0}#newPlan .hy-status[data-error=true]{color:var(--ink);border:1px solid var(--accent);padding:10px;overflow-wrap:anywhere}#newPlan .hy-prep{border:0;margin-top:0}#newPlan .hy-prep summary{font-size:13px}
+#newPlan :focus-visible,.plan-top button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 </style>
 </head>
@@ -205,26 +192,21 @@ footer button{margin:10px 8px 0 0}
 
 <div class="plan-top"><button type="button" id="planSwitch" aria-controls="newPlan" aria-expanded="false">New workout plan</button><span id="planName">Original plan</span></div>
 <section id="newPlan" hidden aria-label="New workout plan">
-<p class="kicker" style="margin-top:24px">45 minutes · five weekdays · four-week block</p><h1>Climb <em>+ Control</em></h1>
-<p>Build muscle. Own your handstand. Build the back, grip and leg control for climbing.</p>
-<div class="goal"><b>Strong sets, controlled skills.</b> Strength: finish with 1–2 clean reps available after week 1. Skills and grip practice stay easy enough to control. No daily max-outs.</div>
-<div id="hybridStatus" class="hy-status" role="status" aria-live="polite"></div>
-<label for="hybridWeek" style="margin-top:16px">Training week · choose when you advance</label><select id="hybridWeek"><option value="1">Week 1 · return to multiple sets</option><option value="2">Week 2 · full work sets</option><option value="3">Week 3 · build on clean reps</option><option value="4">Week 4 · lighter and review</option></select>
-<div class="hy-tabs" aria-label="New plan day"></div><div id="hybridDay"></div>
-<details id="hybridGuide" class="hy-card"><summary>Progression, climbing and recovery guide</summary>
-<h3>Earn harder work</h3><p>Week 1: two work sets instead of three; leave about three clean reps available. Weeks 2–3: listed sets, leaving 1–2 clean reps. Week 4: two work sets and about three reps available. Four short floor-support holds remain easy practice, not work sets.</p>
-<p>Reach the top of every work-set range with good form and 1–2 reps available on two exposures, then add the smallest practical load, reduce assistance or change the ring angle slightly. Change one thing at a time. No forced progress on a bad day.</p>
-<p>If five more clean reps would be easy, adjust the next strength set slightly. If you cannot reach the bottom of the range, use less load or more assistance. Rest 60–90 seconds after each paired exercise. Do not rush to finish; omit an accessory set if the 45 minutes runs out.</p>
-<h3>Climbing capacity</h3><p>Chin-ups and rows train pulling. Supported grip holds and suitcase carries train holding on. Trunk work, split squats and controlled foot placement support coordinated movement. Keep grip holds well short of failure; no weighted hangs, fingerboard, one-arm hangs or max hang tests this block.</p>
-<p>Actual climbing also requires technique, route judgment and safe descent. Learn footwork and movement with qualified instruction on suitable equipment. Gym progress does not make every tree, branch or height safe. No high tree climbing is prescribed here.</p>
-<h3>Vest and dumbbells</h3><p>Start upper-body work without the vest. Add it selectively when earned. No vest on handstands, support practice or jumps; keep dips unweighted this block. One dumbbell is enough for the prescribed leg lifts and carries. Do not assume the heaviest available weight is the right starting load.</p>
-<h3>Elbow and comfort</h3><p>Stop movements that cause joint pain during or afterward. Elbow pain with hard throwing needs a sports-medicine assessment before throwing-speed training. No hard throwing, weighted-ball drills or throwing through pain. This is strength training, not elbow rehabilitation.</p>
-<h3>Only this program</h3><p>The old daily meal push-ups, Sally Up challenge and sprints are paused for this block. Do not stack both plans. Wednesday is intentionally easier. Protect your sleep; shifting a workout earlier should not mean cutting sleep.</p>
-<h3>Track what matters</h3><p>Record actual reps/seconds, load, assistance, setup and reps left. Blank means not logged; zero is an explicit result. For each-side moves, enter the lower side and put left/right differences in notes. Keep wall and freestanding holds separate. A pump is enjoyment feedback; track clean performance and control too.</p>
-<p>On late mornings: warm up, use 3 minutes of skill work, complete the A pair and log. Skip accessories instead of maxing out every exercise.</p>
-<p class="hy-muted">General guidance: <a href="https://acsm.org/resistance-training-guidelines-update-2026/">ACSM resistance training</a> · <a href="https://thebmc.co.uk/en/indoor-climbing-videos">BMC climbing skills</a>. Device-only storage; export regularly.</p>
+<div class="hy-head"><div><h1>The <em>45</em></h1><p class="hy-subtitle">Climb + Control</p></div><label class="hy-week" for="hybridWeek">Training week<select id="hybridWeek"><option value="1">Week 1</option><option value="2">Week 2</option><option value="3">Week 3</option><option value="4">Week 4</option></select></label></div>
+<div class="hy-tabs" aria-label="New plan day"></div><div id="hybridStatus" class="hy-status" role="status" aria-live="polite"></div><div id="hybridDay"></div>
+<details id="hybridTools" class="hy-option"><summary>Plan &amp; backup</summary>
+<details id="hybridGuide" class="hy-option"><summary>Training guide</summary>
+<p><b>Effort:</b> weeks 1 and 4 use two work sets instead of three; leave about three clean reps. Weeks 2 and 3 use listed sets with 1–2 reps left. Skills stay controlled.</p>
+<p><b>Progress:</b> hit every set's top range with clean form and 1–2 reps left twice, then add a small load or reduce assistance. Rest 60–90 seconds after each paired exercise. Stop at 45 minutes.</p>
+<p><b>Climbing:</b> chin-ups, rows, easy supported holds and carries build capacity. Learn climbing technique separately with qualified instruction. No max hangs, fingerboard work or high tree climbing prescribed.</p>
+<p><b>Comfort:</b> stop painful movements. Elbow pain with hard throwing needs assessment before velocity training. No throwing through pain. No vest on skills or jumps; dips stay unweighted this block.</p>
+<p><b>Recovery:</b> no old meal push-ups, Sally Up or extra sprints. Wednesday stays easy. Protect sleep.</p>
+<p><b>Logging:</b> blank means not logged; zero is an actual result. For each-side movements, log the lower side and differences in notes. Use the weight and setup fields to keep comparisons honest.</p>
+<p class="hy-muted"><a href="https://acsm.org/resistance-training-guidelines-update-2026/">Training guidance</a> · <a href="https://thebmc.co.uk/en/indoor-climbing-videos">Climbing skills</a></p>
 </details>
-<div class="hy-card"><h3>Backup both plans</h3><p class="hy-muted">Export includes old and new logs. Import previews the file; restore is a separate action and downloads your current data first.</p><div class="hy-actions"><button type="button" id="hybridExport">Export both plans</button></div><label for="hybridImportFile" style="margin-top:12px">Choose backup to preview</label><input id="hybridImportFile" type="file" accept=".json,application/json"><p id="hybridImportPreview"></p><div class="hy-actions"><button type="button" id="hybridRestore" hidden>Restore backup</button></div></div>
+<div class="hy-actions"><button type="button" id="hybridExport">Export both plans</button></div><label for="hybridImportFile" style="margin-top:12px">Import backup</label><input id="hybridImportFile" type="file" accept=".json,application/json"><p id="hybridImportPreview"></p><div class="hy-actions"><button type="button" id="hybridRestore" hidden>Restore backup</button></div>
+<p class="hy-muted">Saved on this device. Export for backup.</p>
+</details>
 </section>
 <div id="legacyPlan">
 <header>
@@ -894,7 +876,7 @@ DAYS2.forEach(function(d){d.blocks.forEach(function(b){b.ex.forEach(function(e){
 function fresh(){return {v:1,week:1,day:0,ex:{},sessions:[]};}
 function el(id){return document.getElementById(id);}
 function escapeHTML(x){return String(x==null?'':x).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
-function status(t){el('hybridStatus').textContent=t;}
+function status(t){el('hybridStatus').textContent=t;el('hybridStatus').dataset.error=String(/Could not|blocked|Invalid|Enter a|Use valid|failed/i.test(t));}
 function number(v){return v===null||(typeof v==='number'&&Number.isFinite(v)&&v>=0&&v<=1000000);}
 function textField(v){return typeof v==='string'&&v.length<=10000;}
 function valid(s){
@@ -904,27 +886,32 @@ function valid(s){
 }
 function oldValid(s){return s===null||(s&&typeof s==='object'&&!Array.isArray(s)&&s.v===1&&typeof s.start==='string'&&s.ex&&typeof s.ex==='object'&&!Array.isArray(s.ex)&&s.pu&&s.run&&s.test&&Array.isArray(s.sess));}
 try{var raw=localStorage.getItem(KEY2);state=raw?JSON.parse(raw):fresh();if(!valid(state))throw new Error('invalid');}catch(e){state=fresh();blocked=true;status('Could not read new-plan data. The original stored data is retained. Export it before restoring a valid backup; new saves are blocked.');}
-function persist(){if(blocked){status('New saves are blocked: restore a valid backup first.');return false;}try{localStorage.setItem(KEY2,JSON.stringify(state));status('Saved on this device.');return true;}catch(e){status('Could not save: this entry is not saved on the device. Export both plans now to keep the in-memory entry.');return false;}}
+function persist(){if(blocked){status('New saves are blocked: restore a valid backup first.');return false;}try{localStorage.setItem(KEY2,JSON.stringify(state));status('Saved.');return true;}catch(e){status('Could not save: this entry is not saved on the device. Export both plans now to keep the in-memory entry.');return false;}}
 function sets(e){return (state.week===1||state.week===4)&&e.sets===3?2:e.sets;}
 function history(id){return state.ex[id]||[];}
 function observed(r){return r.values.map(function(v){return v===null?'not logged':v;}).join(' / ')+(r.load!==null?' · '+r.load+' lb':'')+(r.rir!==null?' · '+r.rir+' reps left':'');}
 function form(e){
- var h=history(e.id),last=h[h.length-1],unit=e.kind==='seconds'?'seconds':'reps';
- var out='<form data-form="'+e.id+'"><p class="hy-muted">'+escapeHTML(e.tip)+'</p>';
- if(e.sides)out+='<p class="hy-muted">Each side: log the lower side; put left/right differences in notes.</p>';
- if(last)out+='<div class="hy-history"><b>Last logged '+escapeHTML(last.d)+':</b> '+escapeHTML(observed(last))+'<br>'+escapeHTML(last.setup)+' '+escapeHTML(last.note)+'</div>';
- out+='<div class="hy-fields">';for(var i=0;i<sets(e);i++)out+='<label>Set '+(i+1)+' · '+unit+'<input data-value type="number" min="0" step="'+(e.kind==='seconds'?'0.1':'1')+'" inputmode="decimal" placeholder="Not logged"></label>';
- out+='<label>Added load · lb<input name="load" type="number" min="0" step="0.5" inputmode="decimal" placeholder="Bodyweight = 0"></label><label>Clean reps left · optional<input name="rir" type="number" min="0" max="20" inputmode="numeric" placeholder="1–2 after week 1"></label></div>';
- out+='<label>Setup / assistance / load per hand<input name="setup" type="text" maxlength="10000" value="'+escapeHTML(last?last.setup:'')+'" placeholder="Ring height, foot help, dumbbell per hand..."></label><label style="margin-top:10px">Note<textarea name="note" maxlength="10000" placeholder="Control, comfort, left/right differences..."></textarea></label><div class="hy-actions"><button type="submit">Save exercise</button></div>';
- if(h.length)out+='<details class="hy-history"><summary>All '+h.length+' entries</summary>'+h.slice().reverse().map(function(r){return '<p><b>'+escapeHTML(r.d)+'</b> · '+escapeHTML(observed(r))+'<br>'+escapeHTML(r.setup)+' '+escapeHTML(r.note)+'</p>';}).join('')+'</details>';
+ var h=history(e.id),last=h[h.length-1],unit=e.kind==='seconds'?'sec':'reps';
+ var out='<form data-form="'+e.id+'"><div class="hy-fields">';
+ for(var i=0;i<sets(e);i++)out+='<label>Set '+(i+1)+' · '+unit+'<input data-value type="number" min="0" step="'+(e.kind==='seconds'?'0.1':'1')+'" inputmode="decimal" placeholder="—"></label>';
+ out+='<label>Weight · lb<input name="load" type="number" min="0" step="0.5" inputmode="decimal" value="'+(last&&last.load!==null?last.load:'')+'" placeholder="0"></label></div><div class="hy-actions"><button type="submit">Save</button></div>';
+ out+='<details data-notes class="hy-option"><summary>Notes &amp; setup</summary><label>Setup / assistance<input name="setup" type="text" maxlength="10000" value="'+escapeHTML(last?last.setup:'')+'" placeholder="Ring height, help, load per hand"></label><label>Reps left<input name="rir" type="number" min="0" max="20" inputmode="numeric" placeholder="1–2"></label><label>Note<textarea name="note" maxlength="10000"></textarea></label></details>';
+ out+='<details data-how class="hy-option"><summary>How to do it</summary><p>'+escapeHTML(e.tip)+(e.sides?' Each side: log the lower side; note differences.':'')+'</p></details>';
+ if(h.length)out+='<details class="hy-option hy-history"><summary>History · '+h.length+'</summary>'+h.slice().reverse().map(function(r){return '<p><b>'+escapeHTML(r.d)+'</b> · '+escapeHTML(observed(r))+'<br>'+escapeHTML(r.setup)+' '+escapeHTML(r.note)+'</p>';}).join('')+'</details>';
  return out+'</form>';
 }
+function blockName(b){if(b.title.indexOf('Strength A')===0)return 'Strength';if(b.title.indexOf('Strength B')===0)return 'Support';return b.title.split(' · ')[0].replace('Handstand practice','Handstand').replace('Handstand control','Handstand').replace('Handstand balance','Handstand').replace('Shoulder finish','Shoulders').replace('Climbing grip','Grip').replace('Power practice','Jump practice');}
 function render(){
  el('hybridWeek').value=String(state.week);var tabs=el('newPlan').querySelector('.hy-tabs');tabs.innerHTML=DAYS2.map(function(d,i){return '<button type="button" data-newday="'+i+'" aria-pressed="'+(i===state.day)+'">'+d.name.slice(0,3).toUpperCase()+'</button>';}).join('');
- var d=DAYS2[state.day],out='<h2>'+d.title+'</h2><p class="hy-muted">'+d.name+' · Week '+state.week+' · '+((state.week===1||state.week===4)?'lighter sets; about 3 reps available':'strength sets; 1–2 clean reps available')+'</p>';
- d.blocks.forEach(function(b){out+='<p class="hy-clock">'+b.clock+' min</p><h3>'+escapeHTML(b.title)+'</h3>';b.ex.forEach(function(e){out+='<details class="hy-card"><summary data-entry="'+e.id+'">'+escapeHTML(e.name)+'<br><span class="hy-muted">'+sets(e)+' × '+e.lo+(e.hi!==e.lo?'–'+e.hi:'')+' '+(e.kind==='seconds'?'sec':'reps')+(e.sides?' each side':'')+'</span></summary>'+form(e)+'</details>';});});
- out+='<div class="hy-card"><label>Session note · skill win, enjoyment 1–5, sleep, symptoms<textarea id="hybridSession" maxlength="10000"></textarea></label><div class="hy-actions"><button type="button" id="hybridSessionSave">Save session note</button></div>';
- var notes=state.sessions.filter(function(r){return r.day===state.day;});if(notes.length)out+='<details class="hy-history"><summary>All session notes</summary>'+notes.slice().reverse().map(function(r){return '<p><b>'+escapeHTML(r.d)+'</b> '+escapeHTML(r.note)+'</p>';}).join('')+'</details>';out+='</div>';el('hybridDay').innerHTML=out;
+ var d=DAYS2[state.day],out='<h2>'+escapeHTML(d.title)+'</h2>';
+ d.blocks.forEach(function(b,i){
+  if(!b.ex.length){if(i===0)out+='<details class="hy-option hy-prep"><summary>Warm-up · 5 min</summary><p>'+escapeHTML(b.title.replace('Prepare: ',''))+'</p></details>';return;}
+  out+='<div class="hy-block"><span class="hy-clock">'+b.clock+' min</span><span>'+escapeHTML(blockName(b))+'</span></div>';
+  b.ex.forEach(function(e){var h=history(e.id),last=h[h.length-1],done=last&&last.d===today();var target=e.id.indexOf('-free')!==-1?'Best hold':sets(e)+' × '+e.lo+(e.hi!==e.lo?'–'+e.hi:'')+(e.kind==='seconds'?'s':'');
+   out+='<details class="hy-card'+(done?' hy-done':'')+'"><summary data-entry="'+e.id+'"><span class="hy-name">'+escapeHTML(e.name)+(last?'<span class="hy-last">Last '+escapeHTML(last.values.map(function(v){return v===null?'—':v;}).join(' / '))+(last.load?' · '+last.load+' lb':'')+'</span>':'')+'</span><span class="hy-target">'+(done?'✓ ':'')+target+(e.sides?'<br><span class="hy-muted">each side</span>':'')+'</span></summary>'+form(e)+'</details>';});
+ });
+ out+='<details class="hy-option"><summary>Session note</summary><label>Note<textarea id="hybridSession" maxlength="10000" placeholder="Skill win, enjoyment, comfort..."></textarea></label><div class="hy-actions"><button type="button" id="hybridSessionSave">Save note</button></div>';
+ var notes=state.sessions.filter(function(r){return r.day===state.day;});if(notes.length)out+='<details class="hy-option hy-history"><summary>Past notes</summary>'+notes.slice().reverse().map(function(r){return '<p><b>'+escapeHTML(r.d)+'</b> '+escapeHTML(r.note)+'</p>';}).join('')+'</details>';out+='</details>';el('hybridDay').innerHTML=out;
  tabs.querySelectorAll('button').forEach(function(b){b.onclick=function(){state.day=Number(b.dataset.newday);persist();render();window.scrollTo(0,0);};});
  el('hybridDay').querySelectorAll('form').forEach(function(f){f.onsubmit=function(ev){ev.preventDefault();if(blocked){persist();return;}var vals=Array.prototype.map.call(f.querySelectorAll('[data-value]'),function(n){return n.value===''?null:Number(n.value);});var load=f.elements.load.value===''?null:Number(f.elements.load.value),rir=f.elements.rir.value===''?null:Number(f.elements.rir.value);if(vals.every(function(x){return x===null;})&&!f.elements.note.value.trim()){status('Enter a set value or a note before saving.');return;}
  var r={d:today(),values:vals,load:load,rir:rir,setup:f.elements.setup.value.trim(),note:f.elements.note.value.trim()};if(!vals.every(number)||!number(load)||!number(rir)){status('Use valid nonnegative numbers.');return;}var id=f.dataset.form;if(!state.ex[id])state.ex[id]=[];state.ex[id].push(r);persist();render();el('hybridDay').querySelector('[data-form="'+id+'"]').parentElement.open=true;};});
