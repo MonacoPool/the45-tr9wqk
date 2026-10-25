@@ -1,5 +1,5 @@
 /* offline cache — network first, fall back to the cached page */
-var C = 'the45-v12-simple';
+var C = 'the45-v13-daily';
 self.addEventListener('install', function(e){
   e.waitUntil(caches.open(C).then(function(c){ return c.addAll(['./','./index.html']); })
     .then(function(){ return self.skipWaiting(); }));
